@@ -1,0 +1,17 @@
+version: '3'
+services:
+  pg:
+    image: "pg:v11"
+    environment: # docker run -e
+      - POSTGRES_PASSWORD=jack5209
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args: # --build-arg
+        PREV_TS_VERSION: 1.3.2
+        PG_VERSION: 11
+    ports:
+      - "5432:5432"
+    container_name: "pg11"
+    volumes:
+      - /var/lib/postgresql/data:/var/lib/postgresql/data
