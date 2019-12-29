@@ -44,7 +44,8 @@ ARG PG_VERSION
 FROM postgres:${PG_VERSION}-alpine
 ARG OSS_ONLY
 
-MAINTAINER Timescale https://www.timescale.com
+# MAINTAINER Timescale https://www.timescale.com
+LABEL maintainer="https://www.timescale.com"
 
 # Update list above to include previous versions when changing this
 ENV TIMESCALEDB_VERSION 1.5.1
