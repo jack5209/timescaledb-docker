@@ -11,7 +11,13 @@ services:
         PREV_TS_VERSION: 1.3.2
         PG_VERSION: 11
     ports:
-      - "5432:5432"
-    container_name: "pg11"
+      - 5432:5432
+    container_name: pg_01
     volumes:
       - /var/lib/postgresql/data:/var/lib/postgresql/data
+    networks:
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge
